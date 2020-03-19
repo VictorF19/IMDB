@@ -3,16 +3,35 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { MovieBoxComponent } from './movie-box/movie-box.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieDbService } from './movie-db.service';
+import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './loader/loader.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    FavoritesComponent,
+    MovieBoxComponent,
+    LoaderComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    MovieDbService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
